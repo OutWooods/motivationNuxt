@@ -27,40 +27,40 @@ gravity.js and javascript sound libraries.
 
 
 ### Steps to MVP 
-[ ] You can add squares of one colour and fill in the screen
-[ ] You can add one target, and when you achieve it add a colour 
-[ ] You can add new targets, with corresponding colours 
-[ ] You can't use the same colour more than once 
-[ ] You can only meet a target once a day 
-[ ] You can only add one new target a day 
-[ ] You can delete targets
+- [ ] You can add squares of one colour and fill in the screen
+- [ ] You can add one target, and when you achieve it add a colour 
+- [ ] You can add new targets, with corresponding colours 
+- [ ] You can't use the same colour more than once 
+- [ ] You can only meet a target once a day 
+- [ ] You can only add one new target a day 
+- [ ] You can delete targets
 
 ###  Next steps after 
-[ ] The Pixls have motion
-[ ] They hit each other 
-[ ] They make noises when they touch 
-[ ] Special shapes for stages (e.g. 10 days in a row) 
+- [ ] The Pixls have motion
+- [ ] They hit each other 
+- [ ] They make noises when they touch 
+- [ ] Special shapes for stages (e.g. 10 days in a row) 
 
 
-[ ] You can click on one and see the timestamp
-[ ] You can click and see the goal
-[ ] You can add possitive notes
-[ ] You can see the notes randomly
-[ ] When you get a random note, the target is highlighted 
+- [ ] You can click on one and see the timestamp
+- [ ] You can click and see the goal
+- [ ] You can add possitive notes
+- [ ] You can see the notes randomly
+- [ ] When you get a random note, the target is highlighted 
 
-[ ] You can only set five new goals a week 
-[ ] Reflection page 
-[ ] Goals you missed yesterday, you get a little pop up, where you can add a reflection 
-[ ] You can set a different time for reflections 
+- [ ] You can only set five new goals a week 
+- [ ] Reflection page 
+- [ ] Goals you missed yesterday, you get a little pop up, where you can add a reflection 
+- [ ] You can set a different time for reflections 
 
 #### Random future ideas
-[ ] Multiple universes
-[ ] Merge dots together
-[ ] Center of gravity 
-[ ] Size affects speed
-[ ] Cool messafes 
-[ ] Timeline of your goals as balls of colour 
-[ ] Can mark a goal as 'special' as one you're particularly proud of (can only do one a day)
+- [ ] Multiple universes
+- [ ] Merge dots together
+- [ ] Center of gravity 
+- [ ] Size affects speed
+- [ ] Cool messafes 
+- [ ] Timeline of your goals as balls of colour 
+- [ ] Can mark a goal as 'special' as one you're particularly proud of (can only do one a day)
 
 #### Learning 
 Nuxt 
