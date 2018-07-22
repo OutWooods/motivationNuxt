@@ -29,14 +29,23 @@ gravity.js and javascript sound libraries.
 ### Steps to MVP 
 - [X] You can add squares of one colour and fill in the screen
 - [X] You can add squares when you achieve one colour
+
+Make a new vue component, target row. Which creates each of the pixls. 
+You create a new version of this each time, and pass it through a range of props. 
+(Button colour could even correspond to the colour of the pixl?)
+
 - [ ] You can add new targets, and choose corresponding colours (type in the 3 rgb values) or random 
 - [ ] Refactor and tidy up of code
 - [ ] CSS
 
+- [ ] Targets and achievements persist
 - [ ] You can't use the same colour more than once 
 - [ ] You can only meet a target once a day 
 - [ ] You can only add one new target a day 
 - [ ] You can delete targets
+
+- [ ] Diagram structure
+- [ ] Reflection - are there alternate designs that could have been done? 
 
 ###  Next steps after 
 - [ ] The Pixls have motion
@@ -66,8 +75,8 @@ gravity.js and javascript sound libraries.
 Nuxt 
 Tailwind
 Vue 
-Gravity.js
-(insert music library here)
+Gravity.js (not used so far)
+(potentially a music library in the future)
 
 #### Tech
 Nuxt 
