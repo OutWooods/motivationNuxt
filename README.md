@@ -28,8 +28,11 @@ gravity.js and javascript sound libraries.
 
 ### Steps to MVP 
 - [X] You can add squares of one colour and fill in the screen
-- [ ] You can add one target, and when you achieve it add a colour 
-- [ ] You can add new targets, with corresponding colours 
+- [ ] You can add squares when you achieve one colour
+- [ ] You can add new targets, and choose corresponding colours (type in the 3 rgb values) or random 
+- [ ] Refactor and tidy up of code
+- [ ] CSS
+
 - [ ] You can't use the same colour more than once 
 - [ ] You can only meet a target once a day 
 - [ ] You can only add one new target a day 
