@@ -1,12 +1,9 @@
 <template>
   <div>
-      <div id="box"></div>
-      <button @click="newPixl">Click me</button>
+    <button @click="newPixl">Click me</button>
+    <div id="pixl-box"></div>
   </div>
 </template>
-
-<style>
-</style>
 
 <script>
 
@@ -18,17 +15,13 @@
       Pixl
     },
 
-    mounted() {
-      console.log(this.$refs.box);
-    },
-
     methods: {
       newPixl: () => {
         const PixlConstructor = Vue.extend(Pixl);
         var newPixl = new PixlConstructor();
         newPixl.$mount();
 
-        document.getElementById('box').appendChild(newPixl.$el);
+        document.getElementById('pixl-box').appendChild(newPixl.$el);
       }
     }
   }
