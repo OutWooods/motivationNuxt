@@ -1,13 +1,9 @@
 <template>
-  <div class="pixl" v-bind:style="{ backgroundColor: colourMaker() }">
+  <div class="pixl h-3 w-3" v-bind:style="{ backgroundColor: colourMaker() }">
   </div>
 </template>
 
 <style>
-  .pixl {
-    height: 10px;
-    width: 10px;
-  }
 </style>
 
 
