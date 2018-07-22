@@ -27,7 +27,7 @@ gravity.js and javascript sound libraries.
 
 
 ### Steps to MVP 
-- [ ] You can add squares of one colour and fill in the screen
+- [X] You can add squares of one colour and fill in the screen
 - [ ] You can add one target, and when you achieve it add a colour 
 - [ ] You can add new targets, with corresponding colours 
 - [ ] You can't use the same colour more than once 
