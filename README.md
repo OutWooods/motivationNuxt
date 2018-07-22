@@ -76,3 +76,17 @@ Tailwind
 Vue 
 Gravity.js
 (insert music library here)
+
+
+#### How to run
+
+You will need node and npm installed before doing this.
+
+- clone this repo ```git clone https://github.com/Tagrand/motivationNuxt.git```
+- go inside ```cd motivationNuxt```
+- run ```npm install```
+- run ```nuxt```  (this starts your local server)
+- go to localhost:3000
+- Enjoy!
+
+
