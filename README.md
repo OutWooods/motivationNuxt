@@ -29,14 +29,9 @@ gravity.js and javascript sound libraries.
 ### Steps to MVP 
 - [X] You can add squares of one colour and fill in the screen
 - [X] You can add squares when you achieve one colour
-
-Make a new vue component, target row. Which creates each of the pixls. 
-You create a new version of this each time, and pass it through a range of props. 
-(Button colour could even correspond to the colour of the pixl?)
-
-- [ ] You can add new targets, and choose corresponding colours (type in the 3 rgb values) or random 
-- [ ] Refactor and tidy up of code
+- [x] You can add new targets, and choose corresponding colours (type in the 3 rgb values) or random 
 - [ ] CSS
+- [ ] Refactor and tidy up of code
 
 DB work
 - [ ] Targets and achievements persist
