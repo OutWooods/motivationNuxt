@@ -2,28 +2,32 @@
   <div>
     <h1 class="text-center pb-6"> The Great Motivational Pixl's Site</h1>
     <div class="container">
-      <div id="pixl-box"></div>
-      <li id="targets">
-        <ul>
-          <p class="pl-6 pr-6">Spent 30mins doing coding</p>
-          <button @click="newPixl"
-                  class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded">
-            Target Achieved
+      <div :id="store"></div>
+      <ul id="targets">
+        <li>
+          <input v-model="message" placeholder="Target Name">
+          <input v-model="colourChoice.red" placeholder="colourChoice.red">
+          <input v-model="colourChoice.blue" placeholder="colourChoice.blue">
+          <input v-model="colourChoice.green" placeholder="colourChoice.green">
+          <button @click="randomColour"
+                  class="bg-orange hover:bg-orange-dark text-white font-bold py-2 px-4 rounded">
+            Random colour
           </button>
-        </ul>
-        <ul>
-          <p class="pl-6 pr-6"> Add new target</p>
           <button @click="newTarget"
                   class="bg-green hover:bg-green-dark text-white font-bold py-2 px-4 rounded">
-            Add New Target
+            Add new target
           </button>
-        </ul>
-      </li>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <style>
+  ul {
+    list-style-type: none;
+  }
+
   .container {
     display: flex;
     justify-content: space-around;
@@ -38,31 +42,59 @@
 
 <script>
 
-  import Pixl from '~/components/Pixl.vue'
+  import TargetRow from '~/components/TargetRow.vue'
   import Vue from 'vue'
 
   export default {
     components: {
-      Pixl
+      TargetRow,
+    },
+
+    data() {
+      return {
+        'message': '',
+        'store': 'pixl-box',
+        'colourChoice': {
+          'red': 0,
+          'blue': 0,
+          'green': 0,
+        }
+      };
     },
 
     methods: {
-      newPixl: () => {
-        const PixlConstructor = Vue.extend(Pixl);
-        var newPixl = new PixlConstructor();
-        newPixl.$mount();
-
-        document.getElementById('pixl-box').appendChild(newPixl.$el);
+      colourMaker: function () {
+        return `rgb(${this.colourChoice.red}, ${this.colourChoice.blue}, ${this.colourChoice.green})`
       },
 
-      newTarget: () => {
-        console.log(document.getElementById('pixl-box'));
-       console.log(document.getElementById('targets'));
-       const div = document.createElement('ul');
-       div.innerHTML = 'target2';
-       const targets = document.getElementById('targets');
-       const secondLastNode = targets.childNodes.length -1;
-       targets.insertBefore(div, targets.childNodes[secondLastNode]);
+      randomColour: function () {
+        this.colourChoice.blue = Math.round(Math.random() * 255);
+        this.colourChoice.red = Math.round(Math.random() * 255);
+        this.colourChoice.green = Math.round(Math.random() * 255);
+      },
+
+      reset: function () {
+        this.colourChoice.red = 255;
+        this.colourChoice.blue = 255;
+        this.colourChoice.green = 255;
+        this.message = '';
+      },
+
+      newTarget: function () {
+        const TargetRowConstructor = Vue.extend(TargetRow);
+        let newTargetRow = new TargetRowConstructor({
+          propsData: {
+            'name': this.message,
+            'store': this.store,
+            'colour': this.colourMaker(),
+          }
+        });
+        newTargetRow.$mount();
+        const targets = document.getElementById('targets');
+        const secondLastNode = targets.childNodes.length - 1;
+
+        targets.insertBefore(newTargetRow.$el, targets.childNodes[secondLastNode]);
+        this.reset();
       }
     }
   }

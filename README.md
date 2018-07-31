@@ -38,6 +38,7 @@ You create a new version of this each time, and pass it through a range of props
 - [ ] Refactor and tidy up of code
 - [ ] CSS
 
+DB work
 - [ ] Targets and achievements persist
 - [ ] You can't use the same colour more than once 
 - [ ] You can only meet a target once a day 
