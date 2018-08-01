@@ -1,23 +1,25 @@
 <template>
   <div>
     <h1 class="text-center pb-6"> The Great Motivational Pixl's Site</h1>
+
+    <div>
+      <input v-model="message" placeholder="Target Name">
+      <input class="w-12 text-center" v-model="colourChoice.red" placeholder="colourChoice.red">
+      <input class="w-12 text-center" v-model="colourChoice.blue" placeholder="colourChoice.blue">
+      <input class="w-12 text-center" v-model="colourChoice.green" placeholder="colourChoice.green">
+      <button @click="randomColour"
+              class="bg-orange hover:bg-orange-dark text-white font-bold py-2 px-4 rounded">
+        Random colour
+      </button>
+      <button @click="newTarget"
+              class="bg-green hover:bg-green-dark text-white font-bold py-2 px-4 rounded">
+        Add new target
+      </button>
+    </div>
+
     <div class="container">
       <div :id="store"></div>
       <ul id="targets">
-        <li>
-          <input v-model="message" placeholder="Target Name">
-          <input v-model="colourChoice.red" placeholder="colourChoice.red">
-          <input v-model="colourChoice.blue" placeholder="colourChoice.blue">
-          <input v-model="colourChoice.green" placeholder="colourChoice.green">
-          <button @click="randomColour"
-                  class="bg-orange hover:bg-orange-dark text-white font-bold py-2 px-4 rounded">
-            Random colour
-          </button>
-          <button @click="newTarget"
-                  class="bg-green hover:bg-green-dark text-white font-bold py-2 px-4 rounded">
-            Add new target
-          </button>
-        </li>
       </ul>
     </div>
   </div>
@@ -90,10 +92,8 @@
           }
         });
         newTargetRow.$mount();
-        const targets = document.getElementById('targets');
-        const secondLastNode = targets.childNodes.length - 1;
 
-        targets.insertBefore(newTargetRow.$el, targets.childNodes[secondLastNode]);
+        document.getElementById('targets').appendChild(newTargetRow.$el);
         this.reset();
       }
     }
