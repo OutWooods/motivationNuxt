@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1 class="text-center pb-6"> The Great Motivational Pixl's Site</h1>
+    <h1 class="text-center pb-6 pt-6"> The Great Motivational Pixl's Site</h1>
 
-    <div>
+    <div class="pb-6">
       <input v-model="message" placeholder="Target Name">
       <input class="w-12 text-center" v-model="colourChoice.red" placeholder="colourChoice.red">
       <input class="w-12 text-center" v-model="colourChoice.blue" placeholder="colourChoice.blue">
@@ -18,7 +18,9 @@
     </div>
 
     <div class="container">
+
       <div :id="store"></div>
+
       <ul id="targets">
       </ul>
     </div>
@@ -84,7 +86,7 @@
 
       newTarget: function () {
         const TargetRowConstructor = Vue.extend(TargetRow);
-        let newTargetRow = new TargetRowConstructor({
+        const newTargetRow = new TargetRowConstructor({
           propsData: {
             'name': this.message,
             'store': this.store,
