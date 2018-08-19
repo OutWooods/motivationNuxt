@@ -1,106 +1,63 @@
 <template>
-  <div>
-    <h1 class="text-center pb-6 pt-6"> The Great Motivational Pixl's Site</h1>
-
-    <div class="pb-6">
-      <input v-model="message" placeholder="Target Name">
-      <input class="w-12 text-center" v-model="colourChoice.red" placeholder="colourChoice.red">
-      <input class="w-12 text-center" v-model="colourChoice.blue" placeholder="colourChoice.blue">
-      <input class="w-12 text-center" v-model="colourChoice.green" placeholder="colourChoice.green">
-      <button @click="randomColour"
-              class="bg-orange hover:bg-orange-dark text-white font-bold py-2 px-4 rounded">
-        Random colour
-      </button>
-      <button @click="newTarget"
-              class="bg-green hover:bg-green-dark text-white font-bold py-2 px-4 rounded">
-        Add new target
-      </button>
+  <div class="flex">
+    <div class="flex-1 flex flex-wrap">
+      <pixl :colour="pixl.colour"
+            :key="pixl.id"
+            v-for="pixl in pixls"
+      >
+      </pixl>
     </div>
-
-    <div class="container">
-
-      <div :id="store"></div>
-
-      <ul id="targets">
-      </ul>
+    <div class="ml-auto flex-col">
+      <div>
+        <button @click="addTarget">
+          New Target
+        </button>
+      </div>
+      <div :key="target.id"
+           v-for="target in targets">
+        <button @click="addPixl(target.colour)"
+                class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded"
+        >Add goal
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
-<style>
-  ul {
-    list-style-type: none;
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  #pixl-box {
-    display: flex;
-    flex-wrap: wrap;
-    width: 50%;
-  }
-</style>
-
 <script>
-
-  import TargetRow from '~/components/TargetRow.vue'
-  import Vue from 'vue'
+  import Pixl from '~/components/Pixl.vue'
 
   export default {
     components: {
-      TargetRow,
+      Pixl,
     },
 
     data() {
       return {
-        'message': '',
-        'store': 'pixl-box',
-        'colourChoice': {
-          'red': 0,
-          'blue': 0,
-          'green': 0,
-        }
+        targets: [{
+          'id': 1,
+          'colour': 'purple',
+        }],
+        pixls: [{
+          'id': 1,
+          'colour': 'blue',
+        },],
       };
     },
 
     methods: {
-      colourMaker: function () {
-        return `rgb(${this.colourChoice.red}, ${this.colourChoice.blue}, ${this.colourChoice.green})`
-      },
-
-      randomColour: function () {
-        this.colourChoice.blue = Math.round(Math.random() * 255);
-        this.colourChoice.red = Math.round(Math.random() * 255);
-        this.colourChoice.green = Math.round(Math.random() * 255);
-      },
-
-      reset: function () {
-        this.colourChoice.red = 255;
-        this.colourChoice.blue = 255;
-        this.colourChoice.green = 255;
-        this.message = '';
-      },
-
-      newTarget: function () {
-        const TargetRowConstructor = Vue.extend(TargetRow);
-        const newTargetRow = new TargetRowConstructor({
-          propsData: {
-            'name': this.message,
-            'store': this.store,
-            'colour': this.colourMaker(),
-          }
+      addPixl(colour) {
+        this.pixls.push({
+          id: `pixl-${this.pixls.length}`,
+          colour: colour,
         });
-        newTargetRow.$mount();
-
-        document.getElementById('targets').appendChild(newTargetRow.$el);
-        this.reset();
-      }
-    }
-  }
-
-
+      },
+      addTarget() {
+        this.targets.push({
+          id: `target-${this.targets.length}`,
+          colour: 'yellow',
+        });
+      },
+    },
+  };
 </script>
-
