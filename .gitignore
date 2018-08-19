@@ -3,7 +3,7 @@ node_modules
 
 # logs
 npm-debug.log
-idea
+.idea
 
 # Nuxt build
 .nuxt
