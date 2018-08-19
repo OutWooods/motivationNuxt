@@ -9,12 +9,15 @@
     </div>
     <div class="ml-auto flex-col">
       <div>
+        <input v-model="newTarget.name">
+        <input v-model="newTarget.colour">
         <button @click="addTarget">
           New Target
         </button>
       </div>
       <div :key="target.id"
            v-for="target in targets">
+        <span v-text="target.name"></span>
         <button @click="addPixl(target.colour)"
                 class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded"
         >Add goal
@@ -34,14 +37,12 @@
 
     data() {
       return {
-        targets: [{
-          'id': 1,
-          'colour': 'purple',
-        }],
-        pixls: [{
-          'id': 1,
-          'colour': 'blue',
-        },],
+        newTarget: {
+          name: '',
+          colour: '',
+        },
+        targets: [],
+        pixls: [],
       };
     },
 
@@ -53,10 +54,10 @@
         });
       },
       addTarget() {
-        this.targets.push({
-          id: `target-${this.targets.length}`,
-          colour: 'yellow',
-        });
+        this.newTarget.id = this.targets.length;
+        this.targets.push(JSON.parse(JSON.stringify(this.newTarget)));
+        this.newTarget.name = '';
+        this.newTarget.colour = '';
       },
     },
   };
