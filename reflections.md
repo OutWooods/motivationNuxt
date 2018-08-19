@@ -54,4 +54,15 @@ Worked at: Parents house, living wrong
 - Add in mySQL to the project
 - Look if I need to add a backend (to interact with the DB)
 - Test and setup authentication (try to avoid using loads of packages, and stick to just Passport and well maintained stuff)
-- Get the front and back talking, then get them to do something useful. 
+- Get the front and back talking, then get them to do something useful.
+
+==========================================================================
+2018/07/28 - 2:44pm 
+
+General note: Discovered a much more efficient way to make new vue elements with v-for. 
+
+This means I can refactor alot of my code down.
+
+Though it really did help me understand Vue components a bit better to use the Vue mount. So that was helpful) 
+
+==========================================================================
